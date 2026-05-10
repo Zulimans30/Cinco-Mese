@@ -150,9 +150,9 @@ function showCountdown() {
 
   let eventParam = getURLParam('event');
 
-  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-12-12T:11:58:32'); 
+  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-12-12T11:58:32'); 
 
-  let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : new Date('2026-12-12T:00:00');
+  let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : new Date('2026-12-12T00:00');
 
 
 
