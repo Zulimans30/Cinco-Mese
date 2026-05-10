@@ -162,17 +162,17 @@ function showCountdown() {
 
     let diff = now - startDate;
 
-    let days = Math.floor(diff / (100 * 60 * 60 * 24));
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
     let eventDiff = eventDate - now;
 
-    let eventDays = Math.max(0, Math.floor(eventDiff / (100 * 60 * 60 * 24)));
+    let eventDays = Math.max(0, Math.floor(eventDiff / (1000 * 60 * 60 * 24)));
 
-    let eventHours = Math.max(0, Math.floor((eventDiff / (100 * 60 * 60)) % 24));
+    let eventHours = Math.max(0, Math.floor((eventDiff / (1000 * 60 * 60)) % 24));
 
-    let eventMinutes = Math.max(0, Math.floor((eventDiff / (100 * 60)) % 60));
+    let eventMinutes = Math.max(0, Math.floor((eventDiff / (1000 * 60)) % 60));
 
-    let eventSeconds = Math.max(0, Math.floor((eventDiff / 100) % 60));
+    let eventSeconds = Math.max(0, Math.floor((eventDiff / 1000) % 60));
 
 
 
