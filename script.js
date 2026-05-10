@@ -180,8 +180,6 @@ function showCountdown() {
 
       `Llevamos juntos: <b>${days}</b> días<br>` +
 
-      `Cada dia me enamoro mas de ti` +
-
       `Nuestro aniversario: <b>${eventDays}d ${eventHours}h ${eventMinutes}m ${eventSeconds}s</b>` +
 
       ` Felices Cinco Meses <b> </b> <b> </b> Mi Vida <br>`;
