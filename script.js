@@ -142,43 +142,58 @@ function startFloatingObjects() {
 }
 
 // Cuenta regresiva o fecha especial
-// Fecha intermedia para el mensaje de los 5 meses: 12 de Mayo 2026
-  const cincoMesesDate = new Date('2026-05-12T00:00:00');
+function showCountdown() {
+
+  const container = document.getElementById('countdown');
+
+  let startParam = getURLParam('start');
+
+  let eventParam = getURLParam('event');
+
+  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-12-12T11:58:32'); 
+
+  let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : new Date('2026-12-12T:00:00');
+
+
 
   function update() {
-    const now = new Date();
-    
-    // Cálculo de días transcurridos desde el inicio
-    let diff = now - startDate;
-    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    
-    // Cálculo para el aniversario (1 año)
-    let eventDiff = eventDate - now;
-    let eventDays = Math.max(0, Math.floor(eventDiff / (1000 * 60 * 60 * 24)));
-    let eventHours = Math.max(0, Math.floor((eventDiff / (1000 * 60 * 60)) % 24));
-    let eventMinutes = Math.max(0, Math.floor((eventDiff / (1000 * 60)) % 60));
-    let eventSeconds = Math.max(0, Math.floor((eventDiff / 1000) % 60));
 
-    // Lógica para el mensaje de los 5 meses (12 de mayo)
-    // Se muestra mientras estemos antes o durante el 12 de mayo de 2026
-    let mensajeCincoMeses = "";
-    if (now <= cincoMesesDate) {
-        mensajeCincoMeses = `<br>¡Felices Cinco Meses, Mi Vida! ❤️`;
-    } else {
-        mensajeCincoMeses = `<br>Camino a nuestro primer año...`;
-    }
+    const now = new Date();
+
+    let diff = now - startDate;
+
+    let days = Math.floor(diff / (100 * 60 * 60 * 24));
+
+    let eventDiff = eventDate - now;
+
+    let eventDays = Math.max(0, Math.floor(eventDiff / (100 * 60 * 60 * 24)));
+
+    let eventHours = Math.max(0, Math.floor((eventDiff / (100 * 60 * 60)) % 24));
+
+    let eventMinutes = Math.max(0, Math.floor((eventDiff / (100 * 60)) % 60));
+
+    let eventSeconds = Math.max(0, Math.floor((eventDiff / 100) % 60));
+
+
 
     container.innerHTML =
+
       `Llevamos juntos: <b>${days}</b> días<br>` +
-      `Cada día me enamoro más de ti.<br>` +
+
+      `Cada dia me enamoro mas de ti` +
+
       `Nuestro aniversario: <b>${eventDays}d ${eventHours}h ${eventMinutes}m ${eventSeconds}s</b>` +
-      mensajeCincoMeses;
-      
+
+      ` Felices Cinco Meses <b> </b> <b> </b> Mi Vida <br>`;
+
     container.classList.add('visible');
+
   }
 
   update();
+
   setInterval(update, 1000);
+
 }
 
 // --- Música de fondo ---
