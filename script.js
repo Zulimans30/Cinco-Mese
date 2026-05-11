@@ -92,8 +92,8 @@ function showDedicationText() { //seguidores
 // Firma manuscrita animada
 function showSignature() {
   // Cambia para buscar la firma dentro del contenedor de dedicatoria
-  const dedication = document.getElementById('dedication-text');
-  let signature = dedication.querySelector('#signature');
+  const dedication = document.getElementById('Te amo doce Millones a la decima potencia mi Clarett');
+  let signature = dedication.querySelector('De Zulimans');
   if (!signature) {
     signature = document.createElement('div');
     signature.id = 'signature';
